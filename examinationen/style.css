@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1440px;
+    max-height: 900px;
+    background: linear-gradient(90deg, #0C164D 0%, #190B22 100%); 
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 240px 540px 100px;
+    grid-template-columns: 213px 213px 213px 213px 213px 213px 213px 213px 80px;
+    grid-template-areas:
+    "header header header header header header header header header"
+    "item-container item-container item-container item-container item-container item-container item-container item-container item-container";
+}
+
+header {
+    grid-area: header;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+header h1 {
+    width: 625px; 
+    color: #FFF;
+    text-align: right;
+    font-family: Secular One;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 60px */
+    letter-spacing: 5.4px; 
+}
+
+header h2 {
+    color: #FFD029;
+    text-align: right;
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 24px */
+    letter-spacing: 14.4px; 
+}
+
+.item-container {
+    grid-area: item-container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1400px;
+    transform: translateX(23%);
+    left: 22rem;
+    top: 34rem;
+}
+
+#solen {
+    width: 1278px;
+    height: 1278px; 
+    border-radius: 1278px;
+    background: #FFD029;
+    box-shadow: 0px 0px 250px 0px rgba(255, 208, 41, 0.20);
+    transform: translate(-85%, -70%);
+    overflow: hidden;
+}
+
+#merkurius {
+    max-width: 14px;
+    max-height: 14px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #888; 
+}
+
+#venus {
+    max-width: 26px;
+    max-height: 26px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #E7CDCD; 
+}
+
+#jorden {
+    max-width: 28px;
+    max-height: 28px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #428ED4; 
+}
+
+#mars {
+    background-color: #EF5F5F; 
+    max-width: 14px;
+    max-height: 14px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+}
+
+#jupiter {
+    max-width: 188px;
+    max-height: 188px;
+    width: 100%;
+    height: 100%;
+    border-radius: 6rem;
+    background-color: #E29468; 
+}
+
+#saturnus {
+    max-width: 144px;
+    max-height: 144px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #C7AA72; 
+    
+}
+
+.ring {
+    width: 15rem;
+    height: 0.4rem;
+    transform: translate(-20%, 1000%) rotate(150deg);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+#uranus {
+    max-width: 66px;
+    max-height: 66px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #C9D4F1; 
+}
+
+#neptunus {
+    max-width: 66px;
+    max-height: 66px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    background-color: #7A91A7; 
+}
+
+.planet {
+    cursor: pointer;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.planet-info {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". title ."
+    "latin-name . type"
+    ". . ."
+    "description description description"
+    "description description description"
+    ". . ."
+    "distance . temperature"
+    ". rotation ."
+    "circumference . orbital-period"
+    ". moons-title ."
+    "moons moons moons";
+    background: linear-gradient(90deg, #0C164D 0%, #190B22 100%); 
+    color: white;
+    max-width: 40rem;
+    min-height: 50rem;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 5px solid black;
+    
+}
+
+.planet-info p {
+    font-size: 1.5rem;
+    font-family: Roboto Condensed; 
+}
+
+.planet-info h1 {
+    grid-area: title;
+    font-size: 3rem;
+    text-align: center;
+    font-family: Secular One; 
+}
+
+.planet-info .latin-name {
+    grid-area: latin-name;
+    text-align: left;
+}
+
+.planet-info .type {
+    grid-area: type;
+    text-align: right;
+}
+
+.planet-info .description {
+    grid-area: description;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.planet-info .rotation {
+    grid-area: rotation;
+    text-align: center;
+}
+
+.planet-info .temperature {
+    grid-area: temperature;
+    text-align: right;
+}
+
+.planet-info .circumference {
+    grid-area: circumference;
+    text-align: left;
+}
+
+.planet-info .distance {
+    grid-area: distance;
+    text-align: left;
+}
+
+.planet-info .orbital-period {
+    grid-area: orbital-period;
+    text-align: right;
+}
+
+.planet-info .moons-title {
+    grid-area: moons-title;
+    text-align: center;
+}
+
+.planet-info .moons {
+    grid-area: moons;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
