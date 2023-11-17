@@ -1,2 +1,2 @@
 # Solaris-Inl-mningsuppgift
-Grundäggande JavaScript kurs inlämningsuppgift
+Grundläggande JavaScript kurs inlämningsuppgift
